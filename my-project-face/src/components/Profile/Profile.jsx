@@ -3,7 +3,7 @@ import s from './Profile.module.css';
 
 const Profile = () => {
   return (
-    <div className={s.profile}>
+    <div>
       <div>
         <img src='https://upload.wikimedia.org/wikipedia/commons/3/34/Tufa_towers_in_Mono_Lake-1000px.jpeg' ></img>
       </div>
