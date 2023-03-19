@@ -2,13 +2,17 @@
 .nav {
     grid-area: n;
     background-color: blue;
+    padding: 20px;
   }
 
-.item {
+.item a {
   color: azure;
+  text-decoration: none;
 }
 
-.active {
+a.activeLink {
   color: gold;
 }
+
+
   

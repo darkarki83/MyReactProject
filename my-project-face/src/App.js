@@ -1,4 +1,7 @@
 import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes, Switch } from "react-router-dom";
+
 import './App.css';
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
@@ -9,16 +12,24 @@ import Dialogs from './components/Dialogs/Dialogs';
 
 const App = (props) => {
   return (
-    <div className="app-wrapper">
-      <Header />
-      <Navbar />
-      {/* <Profile /> */}
-      <div className='app-wrapper-content'>
-        <Dialogs />
+    <Router>
+      <div className="app-wrapper">
+        <Header />
+        <Navbar />
+        {/* <Profile /> */}
+        <div className='app-wrapper-content'>
+          <Routes>
+            <Route path='/profile' element={<Profile />}>Profile</Route>
+            <Route path='/dialogs' element={<Dialogs />}>Dialog</Route>
+          </Routes>
+
+        </div>
       </div>
-      
-    </div>
+    </Router>
   );
 }
 
 export default App;
+
+
+
