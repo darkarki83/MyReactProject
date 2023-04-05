@@ -5,6 +5,7 @@ import Message from './Message/Message';
 import DialogItem from './DialogItem/DialogItem';
 
 const Dialogs = (props) => {
+  //debugger;
 
   let dialogsElements = props.dialogsPage.dialogsData.map( dialog => <DialogItem name={dialog.name} id={dialog.id} />,  );
   

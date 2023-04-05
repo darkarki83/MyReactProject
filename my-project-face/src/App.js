@@ -8,6 +8,7 @@ import Profile from './components/Profile/Profile';
 import Dialogs from './components/Dialogs/Dialogs';
 
 const App = (props) => {
+  //debugger;
   return (
     <Router>
       <div className="app-wrapper">
@@ -15,10 +16,10 @@ const App = (props) => {
         <Navbar />
         <div className='app-wrapper-content'>
           <Routes>
-            <Route path='/profile' element={<Profile profilePage={props.state.profilePage} addPost={props.addPost} updateNewPostText={props.updateNewPostText} />}>Profile</Route>
-            <Route path='/dialogs' element={<Dialogs dialogsPage={props.state.dialogsPage} />}>Dialog</Route>
-          </Routes>
 
+            <Route path='/dialogs' element={<Dialogs dialogsPage={props.state.dialogsPage} />}>Dialog</Route>
+            <Route path='/profile' element={<Profile profilePage={props.state.profilePage} dispatch={props.dispatch} />}>Profile</Route>
+          </Routes>
         </div>
       </div>
     </Router>
