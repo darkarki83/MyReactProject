@@ -5,10 +5,9 @@ import './App.css';
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
 import Profile from './components/Profile/Profile';
-import Dialogs from './components/Dialogs/Dialogs';
+import DialogsContainer from './components/Dialogs/DialogsContainer';
 
 const App = (props) => {
-  //debugger;
   return (
     <Router>
       <div className="app-wrapper">
@@ -17,8 +16,9 @@ const App = (props) => {
         <div className='app-wrapper-content'>
           <Routes>
 
-            <Route path='/dialogs' element={<Dialogs dialogsPage={props.state.dialogsPage} dispatch={props.dispatch} />}>Dialog</Route>
-            <Route path='/profile' element={<Profile profilePage={props.state.profilePage} dispatch={props.dispatch} />}>Profile</Route>
+            <Route path='/dialogs' element={<DialogsContainer />}>Dialog</Route>
+
+            <Route path='/profile' element={<Profile />}>Profile</Route>
           </Routes>
         </div>
       </div>
