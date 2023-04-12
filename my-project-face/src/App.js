@@ -6,8 +6,11 @@ import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
 import Profile from './components/Profile/Profile';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
+import Users from './components/Users/Users';
+import UsersContainer from './components/Users/UsersContainer';
 
 const App = (props) => {
+  debugger;
   return (
     <Router>
       <div className="app-wrapper">
@@ -18,6 +21,7 @@ const App = (props) => {
 
             <Route path='/dialogs' element={<DialogsContainer />}>Dialog</Route>
             <Route path='/profile' element={<Profile />}>Profile</Route>
+            <Route path='/users' element={<UsersContainer /> }>Users</Route>
           </Routes>
         </div>
       </div>
