@@ -10,7 +10,6 @@ import Users from './components/Users/Users';
 import UsersContainer from './components/Users/UsersContainer';
 
 const App = (props) => {
-  debugger;
   return (
     <Router>
       <div className="app-wrapper">

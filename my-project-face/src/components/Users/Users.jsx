@@ -1,18 +1,24 @@
 import React from "react";
 import s from './Users.module.css';
+import * as axios from "axios";
 
 let Users = (props) => {
-debugger;
-    if (props.users.length === 0) {
-        debugger;
-        props.setUsers([
-            { id: 1, fullName: 'Artiom Krol', status: 'i Am A Boss', location: { country: 'Ukraina', town: 'Odessa' }, image: 'https://avatarfiles.alphacoders.com/893/thumb-89303.gif', followed: true, },
-            { id: 2, fullName: 'Artiom Krol', status: 'i Am A Boss', location: { country: 'Israel', town: 'Ariel' }, image: 'https://avatarfiles.alphacoders.com/893/thumb-89303.gif', followed: true, },
-            { id: 3, fullName: 'Artiom Krol', status: 'i Am A Boss', location: { country: 'Canada', town: 'Winnipeg' }, image: 'https://avatarfiles.alphacoders.com/893/thumb-89303.gif', followed: false, }
-        ])
-    }
+    debugger;
 
+    let getUsers = () => {
+        if (!props.users || props.users.length === 0) {
+            axios.get("https://social-network.samuraijs.com/api/1.0/users")
+                .then(response => {
+                    props.setUsers(response.data);
+                })
+                .catch(error => {
+                    console.error(error);
+                });
+        }
+    }
+    
     return <div>
+        <button onClick={getUsers}>Get Users</button>
         {
             props.users.map(u =>
                 <div key={u.id} >
