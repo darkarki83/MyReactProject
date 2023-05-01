@@ -9,14 +9,6 @@ class UsersApiComponent extends React.Component {
   constructor(props) {
     super(props);
   }
-
-  follow = (id) => {
-    //this.props.follow(id);
-  }
-  unfollow = (id) => {
-    //this.props.unfollow(id);
-  }
-
   componentDidMount() {
     this.props.toggleIsFetching(true);
     axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
